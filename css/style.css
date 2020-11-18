@@ -69,18 +69,33 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    ;
+    
 
 }
 
+#pages-read{
+    
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .container{
     background-color: #515151;
     width:90%;
     display: flex;
-    margin-top: 1px;
-    border-radius: 3px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    height: 10rem;
+    box-shadow: 4px 4px 2px #313131;
+    border: solid 2px transparent;
+    transition: border 0.2s;
     
+}
+
+.container:hover{
+    border: 2px solid var(--warn);
     
 }
 
