@@ -4,6 +4,10 @@ let noOfBooks = 0;
 
 let addBtn = document.querySelector("#add-book");
 let content = document.querySelector("#content");
+let form_close = document.querySelector("#close-button");
+let pop_form = document.querySelector("#pop-form");
+let add_book = document.querySelector("#add-book");
+let submit_button = document.querySelector("#form-submit")
 
 addBookToLibrary(new book("asadfsdf" , "asdf " , 43 ,50));
 addBookToLibrary(new book("asdf" , "asdf " , 43 ,345));
@@ -109,6 +113,8 @@ function addBookToLibrary(iBook){
 // content.append(temp.container);
 
 function generateCard(){
+    bookCards = [];
+    content.innerHTML = "";
     for(var i = 0 ; i<mylibrary.length ; i++){
 
         bookCards[i] = new card(mylibrary[i]);
@@ -120,3 +126,38 @@ function generateCard(){
 
     
 }
+
+
+
+/*form*/
+form_close.addEventListener("click" , renderForm);
+add_book.addEventListener("click" , renderForm);
+
+function renderForm(e){
+    if(e.target.id == "close-button"){
+        pop_form.style.display = "none";
+    }
+    if(e.target.id == "add-book"){
+        pop_form.style.display = "flex";
+    }
+}
+
+
+/*submit button*/
+submit_button.addEventListener("click" , submit_book);
+
+let iBookName = document.querySelector("#book-name");
+let iDescription = document.querySelector("#description");
+let iNoOfPage = document.querySelector("#no-of-pages");
+let iPagesRead = document.querySelector("#inp-pages-read");
+
+console.log(iDescription);
+
+function submit_book(e){
+    console.log(iDescription.value);   
+    let new_book = new book(iBookName.value , iDescription.value ,parseInt(iNoOfPage.value) ,parseInt(iPagesRead.value));
+    mylibrary.push(new_book);
+    generateCard();
+    pop_form.style.display = "none";
+}
+

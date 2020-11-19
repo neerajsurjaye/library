@@ -128,7 +128,7 @@ body{
     margin: auto;
     border-radius: 5px;
     color: white;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.2rem;
     cursor: pointer;
 
@@ -143,6 +143,103 @@ body{
     cursor: pointer;
 }
 
+
+
+/*form*/
+#pop-form{
+
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+
+}
+
+#pop-form > form{
+    width: 25%;
+    background-color: #3b3b3b;
+    border: 5px solid #111;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#pop-form p{
+    display: inline;
+    font-size: 1.8rem;
+    color: white;
+    padding-left: 4px;
+}   
+
+#close-button{
+    display: inline;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 1.5rem;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+#pop-form  #top-nav-bar{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+#pop-form label{
+    color: white;
+    font-size: 1.2rem;
+    margin-left:10px;
+}
+
+#pop-form .pop-inp{
+    
+    display: flex;
+    margin: 2px 0;
+}
+
+
+#pop-form .pop-inp input{
+    
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: #757575;
+    border:2px solid #616161;
+    box-shadow: inset 0 0 4px #616161;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.2s;
+    color: white;
+    padding-left: 4px;
+}
+
+
+#pop-form .pop-inp input:hover{
+    border: 2px solid var(--warn);
+}
+
+#form-submit{
+    margin: 10px 30%;
+    height: 40px;
+    background-color: var(--warn);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+
+}
 
 
 
