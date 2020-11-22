@@ -8,11 +8,13 @@ let form_close = document.querySelector("#close-button");
 let pop_form = document.querySelector("#pop-form");
 let add_book = document.querySelector("#add-book");
 let submit_button = document.querySelector("#form-submit");
+let addbookfloat = document.querySelector("#add-book-float");
 
 
 getBook();
 
 if(mylibrary.length != 0){
+    console.log("MU LIBRARAY");
     generateCard();
 }
 let tempBook = new book("asdf" , "asdf " , 43 ,345);
@@ -77,6 +79,7 @@ function genHtml(obj , index){
         }
 
         if(e.target.id == "add" || e.target.id == "sub"){
+            
             update_pages(e , obj)
         }
     });
@@ -85,10 +88,13 @@ function genHtml(obj , index){
 
 function update_pages(e , obj){
     let index = 0;
-    
+    console.log("ran" , bookCards);
     for(var i = 0 ; i < bookCards.length ; i++){
-        if(bookCards[i].index == obj.index){
+        console.log(i);
+        if(bookCards[i] != null){
+            if(bookCards[i].index == obj.index){
             break;
+            }
         }
         index++;
     }
@@ -97,6 +103,7 @@ function update_pages(e , obj){
         if(mylibrary[index].pages_read+1 > mylibrary[index].total_pages){
             alert("Err++");
         }else{
+        
          mylibrary[index].pages_read++;
         }
     }else if(e.target.id =="sub"){
@@ -137,6 +144,8 @@ function generateCard(){
             bookCards[i] = new card(mylibrary[i]);
             genHtml(bookCards[i] , i);
             content.append(bookCards[i].container);
+        }else{
+            bookCards[i] = null;
         }
         
     }
@@ -149,12 +158,13 @@ function generateCard(){
 /*form*/
 form_close.addEventListener("click" , renderForm);
 add_book.addEventListener("click" , renderForm);
+addbookfloat.addEventListener("click" , renderForm);
 
 function renderForm(e){
     if(e.target.id == "close-button"){
         pop_form.style.display = "none";
     }
-    if(e.target.id == "add-book"){
+    if(e.target.id == "add-book" || e.target.id == "add-book-float"){
         pop_form.style.display = "flex";
     }
 }
@@ -198,6 +208,7 @@ function removeBook(obj){
     generateCard();
     setBook();
 }
+
 
 
 //localStorage.removeItem("book-library");

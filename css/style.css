@@ -46,6 +46,7 @@ body{
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: 200;
+    
 }
 
 #title-in{
@@ -79,6 +80,7 @@ body{
     font-weight: 400;
     display: flex;
     align-items: center;
+    cursor: pointer;
     justify-content: center;
     border-radius: 25px;
     transition: 0.1s;
@@ -96,6 +98,7 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    
     
 
 }
@@ -120,7 +123,7 @@ body{
     box-shadow: 4px 4px 2px #313131;
     border: solid 2px transparent;
     transition: border 0.2s;
-    margin-right: 20px;
+
     
 }
 
@@ -161,6 +164,7 @@ body{
     font-weight: 400;
     font-size: 1.2rem;
     cursor: pointer;
+    box-shadow: 1px 1px 2px #313131;
 
 }
 
@@ -245,14 +249,17 @@ body{
     
     margin-left: auto;
     margin-right: 10px;
-    background-color: #757575;
+    height: 35px;
+    background-color: #616161;
     border:2px solid #616161;
-    box-shadow: inset 0 0 4px #616161;
+    width: 250px;
     border-radius: 4px;
     outline: none;
     transition: all 0.2s;
-    color: white;
+    color: #eee;
     padding-left: 4px;
+
+    font-size: 1rem;
 }
 
 
@@ -289,27 +296,38 @@ body{
 }
 
 
-@media (max-width:720px){
+@media (max-width:1080px){
     #nav-right > #add-book{
         display: none;
     }
 
     #add-book-float{
         margin-right: 20px;
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         background-color: var(--warn);
         font-size: 30px;
         font-weight: 400;
         display: flex;
         align-items: center;
+        cursor: pointer;
         justify-content: center;
-        border-radius: 25px;
+        border-radius: 30px;
         transition: 0.1s;
         position: absolute;
         color:white;
-        bottom: 10px;
-        right: 10px;
+        bottom: 40px;
+        right: 25px;
+        box-shadow: 2px 2px 1px #313131;
+    }
+
+    #add-book-float:active{
+        transform: translate(2px,2px);
+    }
+
+
+    #title{
+        justify-self: center;
     }
 
     #content{
@@ -319,5 +337,29 @@ body{
         width: 100%;
     }
 
+    #pop-form > form{
+        width: 75%;
+        
+        
+    }
+
+}
+
+
+@media (max-width:1580px){
+    #pop-form > form{
+        width: 50%;
+        
+        
+    }
+}
+
+@media (max-width:900px){
+    #pop-form > form{
+        width: 80%;
+        
+        
+        
+    }
 }
 
