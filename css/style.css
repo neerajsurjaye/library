@@ -34,6 +34,7 @@ body{
     height: 4rem;
     background-color: var(--accent-color);
     color: white;
+    box-shadow: 0 0 2px #121212;
 
     display: flex;
     align-items: center; 
@@ -44,6 +45,13 @@ body{
     padding-left: 30px;
     font-size: 2rem;
     text-transform: uppercase;
+    font-weight: 200;
+}
+
+#title-in{
+    color: var(--warn);
+    font-weight: 300;
+    
 }
 
 #navbar > #nav-right{
@@ -54,12 +62,31 @@ body{
 
 #nav-right > #sign-in{
     background-color: var(--warn);
+    border-radius: 15px;
+    transition: 0.1s;
+}
+
+#nav-right > #sign-in:hover{
+    border-radius: 10px;
 }
 
 #nav-right > #add-book{
     margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--warn);
+    font-size: 30px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    transition: 0.1s;
 }
 
+#nav-right > #add-book:hover{
+    border-radius: 12px;
+}
 
 #content{
     height: fit-content;
@@ -67,8 +94,8 @@ body{
     margin: 7rem auto;
     border-radius: 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     
 
 }
@@ -83,14 +110,17 @@ body{
 
 .container{
     background-color: #515151;
-    width:90%;
+    width:70%;
+    height: 100px;
     display: flex;
+    flex-direction: row;
     margin-top: 1rem;
     border-radius: 10px;
     height: 10rem;
     box-shadow: 4px 4px 2px #313131;
     border: solid 2px transparent;
     transition: border 0.2s;
+    margin-right: 20px;
     
 }
 
@@ -242,4 +272,52 @@ body{
 }
 
 
+#close-card{
+    background-color: var(--warn);
+    color: white;
+    margin: 4px;
+    position: relative;
+    float: right;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+@media (max-width:720px){
+    #nav-right > #add-book{
+        display: none;
+    }
+
+    #add-book-float{
+        margin-right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--warn);
+        font-size: 30px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        transition: 0.1s;
+        position: absolute;
+        color:white;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    #content{
+        width: 90%;
+    }
+    .container{
+        width: 100%;
+    }
+
+}
 
