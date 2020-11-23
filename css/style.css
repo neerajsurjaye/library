@@ -327,7 +327,7 @@ body{
         width: 120px;
         height: 120px;
         background-color: var(--warn);
-        font-size: 30px;
+        font-size: 90px;
         font-weight: 400;
         display: flex;
         align-items: center;
