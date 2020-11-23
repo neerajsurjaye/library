@@ -66,8 +66,8 @@ function genHtml(obj , index){
 
     obj.addBtn.textContent = "+";
     obj.subBtn.textContent = "-";
-    obj.addBtn.classList.add("primary-btn");
-    obj.subBtn.classList.add("primary-btn");
+    obj.addBtn.classList.add("primary-btn-con");
+    obj.subBtn.classList.add("primary-btn-con");
     obj.addBtn.id = "add";
     obj.subBtn.id = "sub";
     obj.pages_read.id = "pages-read";
