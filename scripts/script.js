@@ -181,7 +181,7 @@ let iPagesRead = document.querySelector("#inp-pages-read");
 
 function submit_book(e){
     
-    let new_book = new book(iBookName.value , iDescription.value ,parseInt(iNoOfPage.value) ,parseInt(iPagesRead.value));
+    let new_book = new book(iBookName.value , iDescription.value ,parseInt(iPagesRead.value) ,parseInt(iNoOfPage.value) );
     addBookToLibrary(new_book);
     generateCard();
     pop_form.style.display = "none";
