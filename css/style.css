@@ -2,7 +2,7 @@
 
 *{
     box-sizing: border-box;
-    
+    transition: all 0.2s;
 }
 
 h1{
@@ -152,9 +152,10 @@ body{
 }
 
 .container > .left > p{
-    color: #cfcfcf;
-    margin: 10px 0 0 10px;
+    color: #afafaf;
+    margin: 10px 0 0 25px;
     overflow-wrap: break-word;
+
 }
 
 /*buttons*/
@@ -215,8 +216,8 @@ body{
 
 }
 
-#pop-form > form{
-    width: 25%;
+#pop-form > #formC{
+    width: 25vw;
     background-color: #3b3b3b;
     border: 5px solid #111;
     border-radius: 10px;
@@ -224,6 +225,13 @@ body{
     flex-direction: column;
     
 }
+
+#pop-form form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
 
 #pop-form p{
     display: inline;
@@ -279,7 +287,7 @@ body{
     transition: all 0.2s;
     color: #eee;
     padding-left: 4px;
-
+    
     font-size: 1rem;
 }
 
@@ -289,19 +297,27 @@ body{
 }
 
 #form-submit{
-    margin: 10px 30%;
     height: 40px;
     background-color: var(--warn);
     border: none;
     color: white;
     font-size: 1.2rem;
     border-radius: 5px;
+    align-self: center;
+    justify-self: center;
+    margin: 15px 0 0 15px;
 
+}
+
+#no-of-pages , #inp-pages-read{
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
 }
 
 
 #close-card{
     background-color: var(--warn);
+    font-size: 1.5rem;
     color: white;
     margin: 4px;
     position: relative;
@@ -366,8 +382,8 @@ body{
     .primary-btn-con{
         font-size: 2.8rem;
         border-radius: 20px;
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     
     }
 
@@ -405,6 +421,63 @@ body{
     }
     .container >.left > p{
         font-size: 1.4rem;
+    }
+
+    #pop-form > #formC{
+        width: 75vw;
+        display: flex;
+    }
+
+
+
+    #pop-form p{
+        font-size: 2.4rem;
+        margin-left: 10px;
+    }
+
+    #pop-form label{
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 100;
+        margin-left:10px;
+    }
+
+
+    #pop-form .pop-inp input{
+    
+        height: 50px;
+        width: 50%;
+        margin-top: 3px;
+        background-color: #616161;
+        border:2px solid #616161;
+
+        font-size: 1rem;
+    }
+
+    #form-submit{
+        height: 80px;
+        width: 160px;
+        background-color: var(--warn);
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        align-self: center;
+        justify-self: center;
+    }
+
+
+    #close-card{
+        font-size: 2rem;
+        height: 50px;
+        width: 50px;
+        border-radius: 15px;
+    }
+
+    #close-button{
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
     }
 
 }
