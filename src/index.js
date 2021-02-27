@@ -16,6 +16,7 @@ let addbookfloat = document.querySelector("#add-book-float");
 
 getBook();
 fire.init();
+fire.addData({ data: "data" });
 // console.log(fire);
 
 if (mylibrary.length != 0) {
@@ -217,3 +218,23 @@ function removeBook(obj) {
 
 
 //localStorage.removeItem("book-library");s
+
+
+//sign-in
+// document.getElementById("sign-in").addEventListener("click", () => {
+//     console.log("ran");
+// })
+
+let signIn = () => {
+
+    let login = document.getElementById("sign-in");
+    login.addEventListener("click", onSignIn);
+    console.log(login);
+}
+
+let onSignIn = (e) => {
+    // console.log("login");
+    fire.login();
+}
+
+signIn();
