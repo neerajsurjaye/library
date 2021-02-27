@@ -1,4 +1,5 @@
-import firebase from "firebase/app"
+// import firebase from "firebase/app"
+import fire from "./fire"
 
 let mylibrary = [];
 let bookCards = [];
@@ -14,6 +15,8 @@ let addbookfloat = document.querySelector("#add-book-float");
 
 
 getBook();
+fire.init();
+// console.log(fire);
 
 if (mylibrary.length != 0) {
     console.log("MU LIBRARAY");
@@ -206,11 +209,11 @@ function removeBook(obj) {
     console.log(mylibrary);
     console.log(obj.index);
     mylibrary[obj.index] = null;
-    delete obj;
+    // delete obj;
     generateCard();
     setBook();
 }
 
 
 
-//localStorage.removeItem("book-library");
+//localStorage.removeItem("book-library");s
