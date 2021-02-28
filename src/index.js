@@ -20,7 +20,7 @@ fire.addData({ data: "data" });
 // console.log(fire);
 
 if (mylibrary.length != 0) {
-    console.log("MU LIBRARAY");
+    // console.log("MU LIBRARAY");
     generateCard();
 }
 let tempBook = new book("asdf", "asdf ", 43, 345);
@@ -227,14 +227,49 @@ function removeBook(obj) {
 
 let signIn = () => {
 
-    let login = document.getElementById("sign-in");
+    let login = document.getElementById("sign");
     login.addEventListener("click", onSignIn);
-    console.log(login);
+
+
 }
 
 let onSignIn = (e) => {
-    // console.log("login");
+    console.log("login");
     fire.login();
+    Nav();
 }
 
+
+
+let Nav = async () => {
+
+    let loggedIn = await fire.isLoggedIn();
+
+    let sign = document.getElementById("sign");
+    console.log("Nav", loggedIn);
+    if (loggedIn) {
+        // let SignOut = document.createElement("div");
+        sign.textContent = 'Sign Out';
+        // sign.id = "sign";
+        sign.classList.add("primary-btn");
+        // navRight.appendChild(sign);
+
+        document.getElementById("user-name").textContent = (await fire.userData()).displayName;
+    }
+    else {
+
+        console.log("sign in");
+        // let SignIn = document.createElement("div");
+        sign.textContent = 'Sign In';
+        // sign.id = "sign";
+        sign.classList.add("primary-btn");
+        sign.addEventListener("click", () => {
+
+            fire.login();
+        })
+        // navRight.appendChild(SignIn);
+    }
+}
+Nav();
 signIn();
+

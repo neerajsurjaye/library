@@ -19,7 +19,7 @@ let fire = (() => {
     let init = () => {
         auth = firebase.auth();
         db = firebase.firestore();
-        console.log(auth, db);
+        console.log(firebase.auth().currentUser);
     }
 
     let addData = async (data) => {
@@ -32,7 +32,7 @@ let fire = (() => {
         let user = firebase.auth().currentUser;
 
         if (user) {
-            console.log(user.displayName);
+            // console.log("login ", user.displayName);
         } else {
             let provider = await new firebase.auth.GoogleAuthProvider();
             await firebase.auth()
@@ -59,7 +59,22 @@ let fire = (() => {
         }
     }
 
-    return { init, addData, login };
+    let isLoggedIn = async () => {
+        let user = await firebase.auth().currentUser;
+
+        if (user) {
+            return true;
+        }
+        return false;
+    }
+
+    let userData = async () => {
+        let user = await firebase.auth().currentUser;
+        console.log(user);
+        return user;
+    }
+
+    return { init, addData, login, isLoggedIn, userData };
 })();
 
 export default fire;
